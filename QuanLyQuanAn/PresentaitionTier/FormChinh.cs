@@ -166,6 +166,12 @@ namespace QuanLyQuanAn
             }
         }
 
+        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBaoCao f = new FormBaoCao();
+            f.ShowDialog();
+        }
+
         private void thựcĐơnToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormQuanLyThucDon f = new FormQuanLyThucDon();
