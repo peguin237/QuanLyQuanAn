@@ -51,33 +51,6 @@ namespace QuanLyQuanAn
             this.SDT = SDT;
             this.QUYEN = QUYEN;
         }
-        public event EventHandler DangXuat;
-        private void mnsDangXuat_Click(object sender, EventArgs e)
-        {
-            DangXuat(this, new EventArgs());
-        }
-
-        private void FormChinh_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            if (isThoat)
-                Application.Exit();
-        }
-
-        private void mnsThoat_Click(object sender, EventArgs e)
-        {
-            if (isThoat)
-                Application.Exit();
-        }
-
-        private void FormChinh_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (isThoat)
-            {
-                if (MessageBox.Show("Bạn muốn thoát chương trình", "Cảnh báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
-                    e.Cancel = true;
-            }
-        }
-
         private void FormChinh_Load(object sender, EventArgs e)
         {
             KhoiTaoSoLuongBan();
@@ -133,51 +106,13 @@ namespace QuanLyQuanAn
         private void LoadDanhSachBan()
         {
             cbxBan.DataSource = banBUS.GetBans();
-        }      
-        private void doanhThuToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (QUYEN == "Admin")
-            {
-                FormDoanhThu f = new FormDoanhThu();
-                f.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Bạn không quyền làm hành động này", "Thông báo", MessageBoxButtons.OK);
-            }           
-        }
+        }             
         private void cbxDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cbx = sender as ComboBox;
             int maDanhMuc = int.Parse(cbx.SelectedValue.ToString());
             cbxMon.DataSource = monBUS.GetMonTheoDanhMuc(maDanhMuc);
         }
-
-        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (QUYEN == "Admin")
-            {
-                FormQuanLyNhanVien f = new FormQuanLyNhanVien();
-                f.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Bạn không quyền làm hành động này", "Thông báo", MessageBoxButtons.OK);
-            }
-        }
-
-        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormBaoCao f = new FormBaoCao();
-            f.ShowDialog();
-        }
-
-        private void thựcĐơnToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormQuanLyThucDon f = new FormQuanLyThucDon();
-            f.ShowDialog();
-        }
-
         private void btnChuyenBan_Click(object sender, EventArgs e)
         {
             int maSoBanChuyen, maSoBanDich;

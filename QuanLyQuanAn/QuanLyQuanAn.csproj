@@ -109,6 +109,12 @@
     <Compile Include="PresentaitionTier\FormQuanLyThucDon.Designer.cs">
       <DependentUpon>FormQuanLyThucDon.cs</DependentUpon>
     </Compile>
+    <Compile Include="PresentaitionTier\FormTong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentaitionTier\FormTong.Designer.cs">
+      <DependentUpon>FormTong.cs</DependentUpon>
+    </Compile>
     <Compile Include="QLQADataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -157,6 +163,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PresentaitionTier\FormQuanLyThucDon.resx">
       <DependentUpon>FormQuanLyThucDon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PresentaitionTier\FormTong.resx">
+      <DependentUpon>FormTong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -208,6 +217,9 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Hinh\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

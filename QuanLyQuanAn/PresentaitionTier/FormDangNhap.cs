@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using QuanLyQuanAn.Login;
+using QuanLyQuanAn.PresentaitionTier;
 
 
 namespace QuanLyQuanAn
@@ -44,7 +45,7 @@ namespace QuanLyQuanAn
                 if (dt.Rows.Count > 0)
                 {
                     MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
-                    FormChinh f = new FormChinh(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(), dt.Rows[0][6].ToString());
+                    FormTong f = new FormTong(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(), dt.Rows[0][6].ToString());
                     f.Show();
                     this.Hide();
                     this.Reset();
@@ -66,8 +67,8 @@ namespace QuanLyQuanAn
         }
         private void F_DangXuat(object sender, EventArgs e)
         {
-            (sender as FormChinh).isThoat = false;
-            (sender as FormChinh).Close();
+            (sender as FormTong).isThoat = false;
+            (sender as FormTong).Close();
             this.Show();
         }
 

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace QuanLyQuanAn.PresentaitionTier
 {
@@ -36,13 +37,13 @@ namespace QuanLyQuanAn.PresentaitionTier
         }
 
         private void btnThem_Click(object sender, EventArgs e)
-        {
+        {          
             string tenmon = this.txtTenMon.Text;
             string madanhmuc = this.cbxMaDanhMuc.Text;
             string giatien = this.txtGiaTien.Text;
             thucDon = new ThucDon(tenmon, madanhmuc, giatien);
             if (modify.insert(thucDon))
-            {
+            {                
                 dgvMonAn.DataSource = modify.getAllthucdon();
             }
             else
