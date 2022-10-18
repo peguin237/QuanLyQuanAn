@@ -136,12 +136,12 @@ namespace QuanLyQuanAn
                 return;
             }
             bandich = pnlBan.Controls.OfType<Button>().Where(x => x.Tag.ToString() == maSoBanDich.ToString()).FirstOrDefault();
-            bandich.Image = Image.FromFile("../../Resources/icon-nv.ico");
+            bandich.Image = Image.FromFile("../../Resources/table_icon_131703.ico");
             ThongTinDatBan thongTinDatBanDich = Danhsach.Where(x => x.MaBan == maSoBanDich).FirstOrDefault();
             if (thongTinDatBanDich == null)
             {
                 thongTinDatBanChuyen.MaBan = maSoBanDich;
-                pnlBan.Controls.OfType<Button>().Where(x => x.Tag.ToString() == maSoBanDich.ToString()).FirstOrDefault().Image = Image.FromFile("../../Resources/icon-nv.ico");
+                pnlBan.Controls.OfType<Button>().Where(x => x.Tag.ToString() == maSoBanDich.ToString()).FirstOrDefault().Image = Image.FromFile("../../Resources/table_icon_131703.ico");
             }
             else
             {
@@ -155,7 +155,7 @@ namespace QuanLyQuanAn
             banChon.Image = null;
             banChon.BackColor = Color.White;
             banChon = bandich;
-            banChon.BackColor = Color.Blue;
+            banChon.BackColor = Color.LightSeaGreen;
         }
         public void HienThiDanhSachMon(List<MonDat> danhSach)
         {
@@ -190,7 +190,7 @@ namespace QuanLyQuanAn
             {
                 thongTin = new ThongTinDatBan();
                 thongTin.MaBan = MaSoBan;
-                banChon.Image = Image.FromFile("../../Resources/icon-nv.ico");
+                banChon.Image = Image.FromFile("../../Resources/table_icon_131703.ico");
                 Danhsach.Add(thongTin);
             }
             MonDat mon = new MonDat();

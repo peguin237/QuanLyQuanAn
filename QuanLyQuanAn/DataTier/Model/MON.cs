@@ -21,8 +21,6 @@ namespace QuanLyQuanAn.DataTier.Model
         [StringLength(50)]
         public string TEN { get; set; }
 
-        public string Hinh { get; set; }
-
         public int? MADANHMUC { get; set; }
 
         public double? GIATIEN { get; set; }

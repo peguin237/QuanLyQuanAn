@@ -44,7 +44,7 @@ namespace QuanLyQuanAn.QuanLyNhanVien
                 sqlCommand.Parameters.Add("@TEN", SqlDbType.NVarChar).Value = nhanVien.Name;
                 sqlCommand.Parameters.Add("@TENDANGNHAP", SqlDbType.VarChar).Value = nhanVien.User;
                 sqlCommand.Parameters.Add("@MATKHAU", SqlDbType.VarChar).Value = nhanVien.Pass;       
-                sqlCommand.Parameters.Add("@SDT", SqlDbType.Int).Value = nhanVien.Sdt;
+                sqlCommand.Parameters.Add("@SDT", SqlDbType.NVarChar).Value = nhanVien.Sdt;
                 sqlCommand.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = nhanVien.Sex;
                 sqlCommand.Parameters.Add("@QUYEN", SqlDbType.NVarChar).Value = nhanVien.Account;
                 sqlCommand.ExecuteNonQuery();
@@ -71,7 +71,7 @@ namespace QuanLyQuanAn.QuanLyNhanVien
                 sqlCommand.Parameters.Add("@TEN", SqlDbType.NVarChar).Value = nhanVien.Name;
                 sqlCommand.Parameters.Add("@TENDANGNHAP", SqlDbType.VarChar).Value = nhanVien.User;
                 sqlCommand.Parameters.Add("@MATKHAU", SqlDbType.VarChar).Value = nhanVien.Pass;
-                sqlCommand.Parameters.Add("@SDT", SqlDbType.Int).Value = nhanVien.Sdt;
+                sqlCommand.Parameters.Add("@SDT", SqlDbType.NVarChar).Value = nhanVien.Sdt;
                 sqlCommand.Parameters.Add("@GIOITINH", SqlDbType.NVarChar).Value = nhanVien.Sex;
                 sqlCommand.Parameters.Add("@QUYEN", SqlDbType.NVarChar).Value = nhanVien.Account;
                 sqlCommand.ExecuteNonQuery();

@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTong));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hỗTrợToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnQLThucDon = new System.Windows.Forms.Button();
             this.btnDoanhThu = new System.Windows.Forms.Button();
             this.btnOrder = new System.Windows.Forms.Button();
+            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQLNhanVien = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -51,7 +51,7 @@
             this.hỗTrợToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1582, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1582, 28);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -63,31 +63,13 @@
             this.thoátToolStripMenuItem});
             this.tàiKhoảnToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(87, 26);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(87, 24);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài Khoản";
-            // 
-            // đăngXuấtToolStripMenuItem
-            // 
-            this.đăngXuấtToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.đăngXuấtToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
-            this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
-            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
-            // 
-            // thoátToolStripMenuItem
-            // 
-            this.thoátToolStripMenuItem.BackColor = System.Drawing.Color.White;
-            this.thoátToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
-            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(162, 26);
-            this.thoátToolStripMenuItem.Text = "Thoát";
-            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // hỗTrợToolStripMenuItem
             // 
             this.hỗTrợToolStripMenuItem.Name = "hỗTrợToolStripMenuItem";
-            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
+            this.hỗTrợToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.hỗTrợToolStripMenuItem.Text = "Hỗ Trợ";
             this.hỗTrợToolStripMenuItem.Click += new System.EventHandler(this.hỗTrợToolStripMenuItem_Click);
             // 
@@ -155,11 +137,31 @@
             this.btnOrder.UseVisualStyleBackColor = false;
             this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
+            // đăngXuấtToolStripMenuItem
+            // 
+            this.đăngXuấtToolStripMenuItem.BackColor = System.Drawing.Color.Maroon;
+            this.đăngXuấtToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.đăngXuấtToolStripMenuItem.Image = global::QuanLyQuanAn.Properties.Resources.Logout_37127;
+            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+            // 
+            // thoátToolStripMenuItem
+            // 
+            this.thoátToolStripMenuItem.BackColor = System.Drawing.Color.Maroon;
+            this.thoátToolStripMenuItem.ForeColor = System.Drawing.Color.Black;
+            this.thoátToolStripMenuItem.Image = global::QuanLyQuanAn.Properties.Resources.Exit_41038;
+            this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
+            // 
             // btnQLNhanVien
             // 
             this.btnQLNhanVien.BackColor = System.Drawing.Color.LightCoral;
-            this.btnQLNhanVien.BackgroundImage = global::QuanLyQuanAn.Properties.Resources.z3808639741547_1ef8bc242afec66edd882b64781b8cfa_removebg_preview__1_1;
-            this.btnQLNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnQLNhanVien.BackgroundImage = global::QuanLyQuanAn.Properties.Resources.z3808639741547_1ef8bc242afec66edd882b64781b8cfa_removebg_preview__1_;
+            this.btnQLNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnQLNhanVien.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnQLNhanVien.ForeColor = System.Drawing.Color.Maroon;
             this.btnQLNhanVien.Location = new System.Drawing.Point(1062, 45);

@@ -87,6 +87,7 @@
             // 
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvNhanVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvNhanVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvNhanVien.BackgroundColor = System.Drawing.Color.PapayaWhip;
@@ -223,7 +224,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(21, 28);
+            this.label8.Location = new System.Drawing.Point(6, 28);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(68, 20);
             this.label8.TabIndex = 21;

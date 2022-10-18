@@ -121,6 +121,11 @@
     <Compile Include="PresentaitionTier\FormTong.Designer.cs">
       <DependentUpon>FormTong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="QLQADataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -179,13 +184,7 @@
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Report\HoaDon.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -213,50 +212,25 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\7up.jpg" />
-    <None Include="Resources\background.jpg" />
-    <None Include="Resources\bg %281%29.jpg" />
-    <None Include="Resources\doanh thu.jpg" />
-    <None Include="Resources\icon doanh thu.png" />
-    <None Include="Resources\icon đổi bàn.png" />
-    <None Include="Resources\icon liên hệ %281%29 %281%29.png" />
-    <None Include="Resources\add_red_button_icon_227862.ico" />
-    <None Include="Resources\delete_delete_exit_1577.ico" />
-    <None Include="Resources\adunit_stop_delete_delete_exit_7056.ico" />
-    <None Include="Resources\4014665-fix-fixing-phone-repair-tool-wrench_112887.ico" />
-    <None Include="Resources\1486486291-arrows-swap-direction-orientation-switch_81211.ico" />
-    <None Include="Resources\icon quan an.png" />
-    <None Include="Resources\fooddome_116536.png" />
-    <None Include="Resources\fooddome_116536 %281%29.png" />
     <None Include="Resources\fooddome_116536 %282%29.png" />
-    <None Include="Resources\communication_call_customer_help_support_earphone_headset_headphone_icon_210739.png" />
-    <Content Include="Resources\icon-nv.ico" />
-    <None Include="Resources\nhatt.jpg" />
-    <None Include="Resources\icon-nv2.ico" />
-    <None Include="Resources\nhatt %281%29.jpg" />
-    <None Include="Resources\od.jpg" />
-    <None Include="Resources\od %281%29.jpg" />
-    <None Include="Resources\od__1_-removebg-preview.png" />
-    <None Include="Resources\z3808639741547_1ef8bc242afec66edd882b64781b8cfa-removebg-preview.png" />
-    <None Include="Resources\z3808639741547_1ef8bc242afec66edd882b64781b8cfa-removebg-preview %281%29.png" />
-    <None Include="Resources\z3808639741547_1ef8bc242afec66edd882b64781b8cfa-removebg-preview %281%291.png" />
-    <None Include="Resources\z3808648725607_be1eee67cb0349d08dd4b3682e1f18d6.jpg" />
-    <None Include="Resources\z3808648725607_be1eee67cb0349d08dd4b3682e1f18d6__1_-removebg-preview.png" />
-    <None Include="Resources\z3808677077343_3cf2fa63cc3cfe40e82b90099ef75a25-removebg-preview.png" />
-    <None Include="Resources\z3808683842990_a637dca217f117f812a8ba9cc99eddf9-removebg-preview.png" />
-    <None Include="Resources\z3808689450445_58141f50f46778936f74e77fdbc85249-removebg-preview.png" />
-    <None Include="Resources\z3808689450445_58141f50f46778936f74e77fdbc85249-removebg-preview %281%29.png" />
-    <None Include="Resources\z3808689450445_58141f50f46778936f74e77fdbc85249-removebg-preview %281%29 %281%29.png" />
-    <None Include="Resources\icon-đổi-bàn.ico" />
-    <None Include="Resources\icon-đổi-bàn1.ico" />
-    <None Include="Resources\icon-đổi-bàn-_1_.ico" />
-    <None Include="Resources\icon_đổi_bàn__1_-removebg-preview.ico" />
-    <None Include="Resources\icon_liên_hệ__1___1_-removebg-preview.png" />
-    <None Include="Resources\z3808806790196_cb158a0c9f82b047864a6bd5b0a311ce-removebg-preview.png" />
-    <None Include="Resources\z3808806790196_cb158a0c9f82b047864a6bd5b0a311ce-removebg-preview %281%29.png" />
-    <None Include="Resources\icontexto-search-11_icon-icons.com_76907.ico" />
     <None Include="Resources\tabletchart_116582.ico" />
+    <None Include="Resources\communication_call_customer_help_support_earphone_headset_headphone_icon_210739.png" />
+    <None Include="Resources\add_red_button_icon_227862.ico" />
+    <None Include="Resources\4014665-fix-fixing-phone-repair-tool-wrench_112887.ico" />
+    <None Include="Resources\adunit_stop_delete_delete_exit_7056.ico" />
+    <None Include="Resources\delete_delete_exit_1577.ico" />
+    <None Include="Resources\icontexto-search-11_icon-icons.com_76907.ico" />
     <None Include="Resources\pay_cash_bill_money_buy_icon_143287.ico" />
+    <None Include="Resources\1486486291-arrows-swap-direction-orientation-switch_81211.ico" />
+    <None Include="Resources\od__1_-removebg-preview.png" />
+    <None Include="Resources\z3808639741547_1ef8bc242afec66edd882b64781b8cfa-removebg-preview %281%29.png" />
+    <None Include="Resources\z3808689450445_58141f50f46778936f74e77fdbc85249-removebg-preview %281%29 %281%29.png" />
+    <None Include="Resources\z3808677077343_3cf2fa63cc3cfe40e82b90099ef75a25-removebg-preview.png" />
+    <None Include="Resources\icon doanh thu.png" />
+    <None Include="Resources\Logout_37127.ico" />
+    <None Include="Resources\Exit_41038.ico" />
+    <Content Include="Resources\table_14641.ico" />
+    <Content Include="Resources\table_icon_131703.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
