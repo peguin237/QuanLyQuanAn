@@ -89,7 +89,6 @@ namespace QuanLyQuanAn.PresentaitionTier
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int dongChon = e.RowIndex;
-            txtMaNV.Text = dgvNhanVien.Rows[dongChon].Cells[0].Value.ToString();
             txtTen.Text = dgvNhanVien.Rows[dongChon].Cells[1].Value.ToString();
             txtTaiKhoan.Text = dgvNhanVien.Rows[dongChon].Cells[4].Value.ToString();
             txtMatKhau.Text = dgvNhanVien.Rows[dongChon].Cells[5].Value.ToString();
@@ -100,7 +99,7 @@ namespace QuanLyQuanAn.PresentaitionTier
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            txtTen.Text = txtTaiKhoan.Text = txtMatKhau.Text = txtMaNV.Text = "";
+            txtTen.Text = txtTaiKhoan.Text = txtMatKhau.Text = "";
             cbxQuyen.Text = cbxGioiTinh.Text = "";
             txtSDT.Text = "";
             dgvNhanVien.DataSource = modify.getAllnhanvien();

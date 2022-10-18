@@ -87,6 +87,12 @@ namespace QuanLyQuanAn.PresentaitionTier
         {
         }
 
+        private void hỗTrợToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormHoTro f = new FormHoTro();
+            f.ShowDialog();
+        }
+
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (isThoat)

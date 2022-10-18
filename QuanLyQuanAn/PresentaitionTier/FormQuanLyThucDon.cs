@@ -85,7 +85,6 @@ namespace QuanLyQuanAn.PresentaitionTier
         private void dgvMonAn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int dongChon = e.RowIndex;
-            txtMaMon.Text = dgvMonAn.Rows[dongChon].Cells[0].Value.ToString();
             txtTenMon.Text = dgvMonAn.Rows[dongChon].Cells[1].Value.ToString();           
             cbxMaDanhMuc.Text = dgvMonAn.Rows[dongChon].Cells[2].Value.ToString();
             txtGiaTien.Text = dgvMonAn.Rows[dongChon].Cells[3].Value.ToString();
@@ -93,10 +92,10 @@ namespace QuanLyQuanAn.PresentaitionTier
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            txtTenMon.Text = txtMaMon.Text = txtGiaTien.Text = "";
+            txtTenMon.Text = txtGiaTien.Text = "";
             cbxMaDanhMuc.Text = "";
             dgvMonAn.DataSource = modify.getAllthucdon();
-            txtTenMon.Enabled = txtMaMon.Enabled = txtGiaTien.Enabled = cbxMaDanhMuc.Enabled = true;
+            txtTenMon.Enabled = txtGiaTien.Enabled = cbxMaDanhMuc.Enabled = true;
         }
 
         private void btnTim_Click(object sender, EventArgs e)
