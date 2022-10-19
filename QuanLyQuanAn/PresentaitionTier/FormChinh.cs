@@ -106,7 +106,7 @@ namespace QuanLyQuanAn
         private void LoadDanhSachBan()
         {
             cbxBan.DataSource = banBUS.GetBans();
-        }             
+        }
         private void cbxDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cbx = sender as ComboBox;
@@ -287,7 +287,6 @@ namespace QuanLyQuanAn
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
+        }        
     }
 }
