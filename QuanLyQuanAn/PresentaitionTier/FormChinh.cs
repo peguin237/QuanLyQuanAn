@@ -155,7 +155,7 @@ namespace QuanLyQuanAn
             banChon.Image = null;
             banChon.BackColor = Color.White;
             banChon = bandich;
-            banChon.BackColor = Color.LightSeaGreen;
+            banChon.BackColor = Color.LightCoral;
         }
         public void HienThiDanhSachMon(List<MonDat> danhSach)
         {
@@ -210,7 +210,7 @@ namespace QuanLyQuanAn
             if (banChon == null)
             {
                 banChon = btn;
-                banChon.BackColor = Color.LightSeaGreen;               
+                banChon.BackColor = Color.LightCoral;               
             }
             else if (banChon == btn)
             {
@@ -226,7 +226,7 @@ namespace QuanLyQuanAn
             {
                 banChon.BackColor = Color.White;
                 banChon = btn;
-                banChon.BackColor = Color.LightSeaGreen;
+                banChon.BackColor = Color.LightCoral;
             }
             int maSoBanChon = int.Parse(banChon.Tag.ToString());
             //Kiem tra xem BAN CO TRONG DS HAY CHUA 

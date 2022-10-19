@@ -30,6 +30,8 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormQuanLyThucDon));
             this.txtTenMon = new System.Windows.Forms.TextBox();
             this.txtGiaTien = new System.Windows.Forms.TextBox();
@@ -43,11 +45,11 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnTim = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
+            this.btnTim = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonAn)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -117,31 +119,57 @@
             // 
             // dgvMonAn
             // 
+            this.dgvMonAn.AllowUserToAddRows = false;
+            this.dgvMonAn.AllowUserToDeleteRows = false;
+            this.dgvMonAn.AllowUserToResizeColumns = false;
+            this.dgvMonAn.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvMonAn.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMonAn.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMonAn.BackgroundColor = System.Drawing.Color.PapayaWhip;
-            this.dgvMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvMonAn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvMonAn.Location = new System.Drawing.Point(21, 27);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMonAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMonAn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvMonAn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMonAn.Location = new System.Drawing.Point(3, 24);
             this.dgvMonAn.Name = "dgvMonAn";
+            this.dgvMonAn.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvMonAn.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvMonAn.RowHeadersWidth = 51;
             this.dgvMonAn.RowTemplate.Height = 24;
-            this.dgvMonAn.Size = new System.Drawing.Size(1064, 363);
+            this.dgvMonAn.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvMonAn.Size = new System.Drawing.Size(1099, 386);
             this.dgvMonAn.TabIndex = 0;
             this.dgvMonAn.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonAn_CellClick);
             // 
             // cbxMaDanhMuc
             // 
+            this.cbxMaDanhMuc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxMaDanhMuc.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxMaDanhMuc.FormattingEnabled = true;
             this.cbxMaDanhMuc.Items.AddRange(new object[] {
@@ -192,22 +220,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(536, 87);
             this.panel1.TabIndex = 26;
-            // 
-            // btnTim
-            // 
-            this.btnTim.BackColor = System.Drawing.Color.LightCoral;
-            this.btnTim.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTim.ForeColor = System.Drawing.Color.White;
-            this.btnTim.Image = global::QuanLyQuanAn.Properties.Resources.icontexto_search_11_icon_icons_com_76907;
-            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(982, 105);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(142, 69);
-            this.btnTim.TabIndex = 25;
-            this.btnTim.Text = "Tìm Kiếm";
-            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTim.UseVisualStyleBackColor = false;
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // btnXoa
             // 
@@ -272,6 +284,22 @@
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnTim
+            // 
+            this.btnTim.BackColor = System.Drawing.Color.LightCoral;
+            this.btnTim.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTim.ForeColor = System.Drawing.Color.White;
+            this.btnTim.Image = global::QuanLyQuanAn.Properties.Resources.icontexto_search_11_icon_icons_com_76907;
+            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTim.Location = new System.Drawing.Point(982, 105);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(142, 69);
+            this.btnTim.TabIndex = 25;
+            this.btnTim.Text = "Tìm Kiếm";
+            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTim.UseVisualStyleBackColor = false;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // FormQuanLyThucDon
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoanhThu));
             this.dtpFrom = new System.Windows.Forms.DateTimePicker();
             this.dtpTo = new System.Windows.Forms.DateTimePicker();
@@ -64,13 +65,27 @@
             // 
             // dgvThongKe
             // 
+            this.dgvThongKe.AllowUserToAddRows = false;
+            this.dgvThongKe.AllowUserToDeleteRows = false;
+            this.dgvThongKe.AllowUserToResizeColumns = false;
+            this.dgvThongKe.AllowUserToResizeRows = false;
             this.dgvThongKe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvThongKe.BackgroundColor = System.Drawing.Color.PapayaWhip;
             this.dgvThongKe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightCoral;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Maroon;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvThongKe.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvThongKe.Location = new System.Drawing.Point(19, 16);
             this.dgvThongKe.Name = "dgvThongKe";
+            this.dgvThongKe.ReadOnly = true;
             this.dgvThongKe.RowHeadersWidth = 51;
             this.dgvThongKe.RowTemplate.Height = 24;
+            this.dgvThongKe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvThongKe.Size = new System.Drawing.Size(703, 322);
             this.dgvThongKe.TabIndex = 2;
             // 
