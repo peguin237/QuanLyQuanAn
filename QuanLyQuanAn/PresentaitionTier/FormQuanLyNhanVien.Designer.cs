@@ -135,7 +135,6 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.dgvNhanVien.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvNhanVien.RowTemplate.Height = 24;
-            this.dgvNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvNhanVien.Size = new System.Drawing.Size(1340, 406);
             this.dgvNhanVien.TabIndex = 0;
             this.dgvNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvNhanVien_CellClick);

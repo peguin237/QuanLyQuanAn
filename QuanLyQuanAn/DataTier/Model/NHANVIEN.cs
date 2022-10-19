@@ -24,7 +24,7 @@ namespace QuanLyQuanAn.DataTier.Model
         [StringLength(100)]
         public string GIOITINH { get; set; }
 
-        public int? SDT { get; set; }
+        public string SDT { get; set; }
 
         [StringLength(500)]
         public string MATKHAU { get; set; }

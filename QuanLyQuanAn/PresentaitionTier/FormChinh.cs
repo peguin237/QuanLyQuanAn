@@ -13,12 +13,12 @@ using QuanLyQuanAn.DataTier;
 using QuanLyQuanAn.Properties;
 using QuanLyQuanAn.PresentaitionTier;
 using QuanLyQuanAn.QuanLyNhanVien;
+using QuanLyQuanAn.DataTier.ViewModel;
 
 namespace QuanLyQuanAn
 {
     public partial class FormChinh : Form
     {
-        string MANV = "", TEN = "", MATKHAU = "", TENDANGNHAP = "", GIOITINH = "", SDT = "", QUYEN = "";
         private const int W = 60;
         private const int H = 60;
         private const int DISTANCE = 100;
@@ -33,8 +33,8 @@ namespace QuanLyQuanAn
         private HoaDonBUS hoaDonBUS;
         public bool isThoat = true;
         System.Globalization.CultureInfo fVND = new System.Globalization.CultureInfo("vi-VN");
-
-        public FormChinh(string MANV, string TEN, string MATKHAU, string TENDANGNHAP, string GIOITINH, string SDT, string QUYEN)
+        NhanVienViewModel nhanVienBanHang;
+        public FormChinh(NhanVienViewModel nv)
         {
             InitializeComponent();
             nupGiamGia.TextChanged += NupGiamGia_TextChanged;
@@ -42,14 +42,8 @@ namespace QuanLyQuanAn
             danhMucBUS = new DanhMucBUS();
             banBUS = new BanBUS();
             hoaDonBUS = new HoaDonBUS();
+            nhanVienBanHang = nv;
             CaiDatDieuKhien();
-            this.MANV = MANV;
-            this.TEN = TEN;
-            this.MATKHAU = MATKHAU;
-            this.TENDANGNHAP = TENDANGNHAP;
-            this.GIOITINH = GIOITINH;
-            this.SDT = SDT;
-            this.QUYEN = QUYEN;
         }
         private void FormChinh_Load(object sender, EventArgs e)
         {
@@ -106,7 +100,7 @@ namespace QuanLyQuanAn
         private void LoadDanhSachBan()
         {
             cbxBan.DataSource = banBUS.GetBans();
-        }             
+        }
         private void cbxDanhMuc_SelectedIndexChanged(object sender, EventArgs e)
         {
             ComboBox cbx = sender as ComboBox;
@@ -190,7 +184,7 @@ namespace QuanLyQuanAn
             {
                 thongTin = new ThongTinDatBan();
                 thongTin.MaBan = MaSoBan;
-                banChon.Image = Image.FromFile("../../Resources/table_icon_131703.ico");
+                banChon.Image = Image.FromFile("../../Resources/food_cafe_hot_soup_restaurant_icon_226128.ico");
                 Danhsach.Add(thongTin);
             }
             MonDat mon = new MonDat();
@@ -198,7 +192,7 @@ namespace QuanLyQuanAn
             mon.SoLuong = int.Parse(nupSoLuong.Value.ToString());
             mon.TenMon = cbxMon.Text;
             mon.DonGia = (double)m.GIATIEN;
-            mon.MaMon = m.MAMON;
+            mon.MaMon = m.MAMON;          
             thongTin.CapNhatMon(mon);
             HienThiDanhSachMon(thongTin.DanhSachMon);
             tongTien = thongTin.DanhSachMon.Sum(x => x.ThanhTien);
@@ -263,7 +257,7 @@ namespace QuanLyQuanAn
             hoaDon.MABAN = int.Parse(banChon.Tag.ToString());
             hoaDon.GIAMGIA = (double)nupGiamGia.Value;
             hoaDon.NGAY = DateTime.Now;
-            hoaDon.MANV = int.Parse(MANV.ToString());
+            hoaDon.MANV = nhanVienBanHang.Ma;
             CHITIETHOADON chiTiet;
             foreach (var item in thongTinDatBan.DanhSachMon)
             {
@@ -289,5 +283,49 @@ namespace QuanLyQuanAn
             }
         }
 
+        private void btnThemMonGiaoDien_Click(object sender, EventArgs e)
+        {
+            if (banChon == null)
+            {
+                MessageBox.Show("vui long chon ban");
+                return;
+            }
+            int maSoBan = Convert.ToInt32(banChon.Tag);
+            FormChonMon f = new FormChonMon(maSoBan);
+            f.UyQuyenChonMon += Frm_UyQuyenChonMon;
+            f.ShowDialog();
+        }
+        private void Frm_UyQuyenChonMon(MON mon, int maSoban, int soLuong)
+        {
+            //mon 
+            ThongTinDatBan thongTinDatBan = Danhsach
+                .Where(x => x.MaBan == maSoban)
+                .FirstOrDefault();
+
+            // TRƯỜNG HỢP BÀN CHƯA ĐẶT
+            if (thongTinDatBan == null)
+            {
+                thongTinDatBan = new ThongTinDatBan();
+                thongTinDatBan.MaBan = maSoban;
+                Danhsach.Add(thongTinDatBan);
+                // thay hình button 
+                banChon.Image =Image.FromFile("../../Resources/food_cafe_hot_soup_restaurant_icon_226128.ico");
+            }
+            // Thêm món vào bàn
+            MON monChon = mon;
+            MonDat monMoi = new MonDat()
+            {
+                MaMon = monChon.MAMON,
+                TenMon = monChon.TEN,
+                DonGia = (double)monChon.GIATIEN,
+                SoLuong = soLuong
+            };
+            thongTinDatBan.CapNhatMon(monMoi);
+
+            tongTien = thongTinDatBan.DanhSachMon.Sum(x => x.ThanhTien);
+            txtTongTien.Text = String.Format(fVND, "{0:C0}", tongTien);
+
+            HienThiDanhSachMon(thongTinDatBan.DanhSachMon);
+        }
     }
 }

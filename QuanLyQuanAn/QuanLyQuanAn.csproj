@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net, Version=0.1.4141.31969, Culture=neutral, PublicKeyToken=f3bc8f8c31beeb49, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net.0.1.0\lib\net35\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -78,6 +81,7 @@
     <Compile Include="BusinessTier\HoaDonBUS.cs" />
     <Compile Include="BusinessTier\DanhMucBUS.cs" />
     <Compile Include="BusinessTier\MonBUS.cs" />
+    <Compile Include="BusinessTier\NhanVienBUS.cs" />
     <Compile Include="DataTier\DanhMucDAL.cs" />
     <Compile Include="DataTier\BanDAL.cs" />
     <Compile Include="DataTier\HoaDonDAL.cs" />
@@ -89,13 +93,22 @@
     <Compile Include="DataTier\Model\MON.cs" />
     <Compile Include="DataTier\Model\NHANVIEN.cs" />
     <Compile Include="DataTier\MonDAL.cs" />
-    <Compile Include="DataTier\MonDat.cs" />
-    <Compile Include="DataTier\ThongTinDatBan.cs" />
+    <Compile Include="DataTier\NhanVienDAL.cs" />
+    <Compile Include="DataTier\ViewModel\MonAnViewModel.cs" />
+    <Compile Include="DataTier\ViewModel\MonDat.cs" />
+    <Compile Include="DataTier\ViewModel\NhanVienViewModel.cs" />
+    <Compile Include="DataTier\ViewModel\ThongTinDatBan.cs" />
     <Compile Include="PresentaitionTier\FormBaoCao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="PresentaitionTier\FormBaoCao.Designer.cs">
       <DependentUpon>FormBaoCao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PresentaitionTier\FormChonMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PresentaitionTier\FormChonMon.Designer.cs">
+      <DependentUpon>FormChonMon.cs</DependentUpon>
     </Compile>
     <Compile Include="PresentaitionTier\FormDoanhThu.cs">
       <SubType>Form</SubType>
@@ -163,6 +176,9 @@
     <EmbeddedResource Include="PresentaitionTier\FormChinh.resx">
       <DependentUpon>FormChinh.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="PresentaitionTier\FormChonMon.resx">
+      <DependentUpon>FormChonMon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PresentaitionTier\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -229,6 +245,16 @@
     <None Include="Resources\icon doanh thu.png" />
     <None Include="Resources\Logout_37127.ico" />
     <None Include="Resources\Exit_41038.ico" />
+    <Content Include="HINH\7up.jpg" />
+    <None Include="Resources\bg.jpg" />
+    <None Include="Resources\8a6d65e0bcbad357c622019c254aa76a.jpg" />
+    <None Include="Resources\pngtree-red-recipe-background-picture-image_346522.jpg" />
+    <None Include="Resources\72bf442186582f1ecd49d717116b6818.jpg" />
+    <None Include="Resources\72bf442186582f1ecd49d717116b68181.jpg" />
+    <None Include="Resources\image-removebg-preview %281%29.png" />
+    <Content Include="Resources\food_cafe_hot_soup_restaurant_icon_226127.ico" />
+    <Content Include="Resources\food_cafe_hot_soup_restaurant_icon_226128.ico" />
+    <Content Include="Resources\soup_restaurant_kitchen_bowl_icon_230705.ico" />
     <Content Include="Resources\table_14641.ico" />
     <Content Include="Resources\table_icon_131703.ico" />
     <Content Include="SqlServerTypes\readme.htm" />
@@ -245,8 +271,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Hinh\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

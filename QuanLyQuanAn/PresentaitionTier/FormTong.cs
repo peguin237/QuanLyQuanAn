@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyQuanAn.DataTier.ViewModel;
 using QuanLyQuanAn.Login;
 using QuanLyQuanAn.QuanLyThucDon;
 
@@ -15,7 +16,12 @@ namespace QuanLyQuanAn.PresentaitionTier
 {
     public partial class FormTong : Form
     {
-        string MANV = "", TEN = "", MATKHAU = "", TENDANGNHAP = "", GIOITINH = "", SDT = "", QUYEN = "";
+        private NhanVienViewModel nhanVienBanHang;
+        public FormTong(NhanVienViewModel nv)
+        {
+            InitializeComponent();
+            nhanVienBanHang = nv;
+        }
         private void FormTong_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (isThoat)
@@ -27,64 +33,54 @@ namespace QuanLyQuanAn.PresentaitionTier
 
         private void btnQLNhanVien_Click(object sender, EventArgs e)
         {
-            if (QUYEN == "Admin")
-            {
-                FormQuanLyNhanVien f = new FormQuanLyNhanVien();
-                f.ShowDialog();
+            if (nhanVienBanHang.Quyen == "Admin")
+            { 
+            FormQuanLyNhanVien f = new FormQuanLyNhanVien();
+            f.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Bạn không quyền làm hành động này", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Bạn không có quyền thực hiện hành động này", "Thông báo", MessageBoxButtons.OK);
             }
         }
 
         private void btnDoanhThu_Click(object sender, EventArgs e)
         {
-            if (QUYEN == "Admin")
+            if (nhanVienBanHang.Quyen == "Admin")
             {
                 FormDoanhThu f = new FormDoanhThu();
                 f.ShowDialog();
             }
             else
             {
-                MessageBox.Show("Bạn không quyền làm hành động này", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Bạn không có quyền thực hiện hành động này", "Thông báo", MessageBoxButtons.OK);
             }
         }
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            if (QUYEN == "Admin")
-            {
-                FormBaoCao f = new FormBaoCao();
-                f.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Bạn không quyền làm hành động này", "Thông báo", MessageBoxButtons.OK);
-            }
+            FormBaoCao f = new FormBaoCao();
+            f.ShowDialog();
         }
 
         private void btnQLThucDon_Click(object sender, EventArgs e)
-        {
-            
+        {            
             FormQuanLyThucDon f = new FormQuanLyThucDon();
             f.ShowDialog();
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            string id = MANV;
-            SqlConnection sqlConnection = Connection.GetConnection();
-            sqlConnection.Open();
-            SqlDataAdapter da = new SqlDataAdapter("select * from NHANVIEN where MANV = " + id + "", sqlConnection);
-            DataTable dt = new DataTable();
-            da.Fill(dt); 
-            FormChinh f = new FormChinh(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(), dt.Rows[0][6].ToString());
-            f.ShowDialog();
+            FormChinh f = new FormChinh(nhanVienBanHang);
+            f.Show();
         }
 
         private void FormTong_Load(object sender, EventArgs e)
         {
+            txtMa.ReadOnly = true;
+            txtTen.ReadOnly = true;
+            txtTen.Text = nhanVienBanHang.Ten;
+            txtMa.Text = nhanVienBanHang.Ma.ToString();
         }
 
         private void hỗTrợToolStripMenuItem_Click(object sender, EventArgs e)
@@ -109,18 +105,6 @@ namespace QuanLyQuanAn.PresentaitionTier
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DangXuat(this, new EventArgs());
-        }
-
-        public FormTong(string MANV, string TEN, string MATKHAU, string TENDANGNHAP, string GIOITINH, string SDT, string QUYEN)
-        {
-            InitializeComponent();
-            this.MANV = MANV;
-            this.TEN = TEN;
-            this.MATKHAU = MATKHAU;
-            this.TENDANGNHAP = TENDANGNHAP;
-            this.GIOITINH = GIOITINH;
-            this.SDT = SDT;
-            this.QUYEN = QUYEN;           
         }
         public event EventHandler DangXuat;
 

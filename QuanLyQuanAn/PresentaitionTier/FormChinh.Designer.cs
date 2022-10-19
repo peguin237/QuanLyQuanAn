@@ -53,6 +53,7 @@
             this.btnChuyenBan = new System.Windows.Forms.Button();
             this.btnThanhToan = new System.Windows.Forms.Button();
             this.btnThemMon = new System.Windows.Forms.Button();
+            this.btnThemMonGiaoDien = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nupSoLuong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachMon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nupGiamGia)).BeginInit();
@@ -310,12 +311,23 @@
             this.btnThemMon.UseVisualStyleBackColor = false;
             this.btnThemMon.Click += new System.EventHandler(this.btnThemMon_Click);
             // 
+            // btnThemMonGiaoDien
+            // 
+            this.btnThemMonGiaoDien.Location = new System.Drawing.Point(734, 527);
+            this.btnThemMonGiaoDien.Name = "btnThemMonGiaoDien";
+            this.btnThemMonGiaoDien.Size = new System.Drawing.Size(75, 23);
+            this.btnThemMonGiaoDien.TabIndex = 17;
+            this.btnThemMonGiaoDien.Text = "button1";
+            this.btnThemMonGiaoDien.UseVisualStyleBackColor = true;
+            this.btnThemMonGiaoDien.Click += new System.EventHandler(this.btnThemMonGiaoDien_Click);
+            // 
             // FormChinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1477, 715);
+            this.Controls.Add(this.btnThemMonGiaoDien);
             this.Controls.Add(this.txtTongTien);
             this.Controls.Add(this.nupGiamGia);
             this.Controls.Add(this.cbxBan);
@@ -369,6 +381,7 @@
         private System.Windows.Forms.ComboBox cbxBan;
         private System.Windows.Forms.NumericUpDown nupGiamGia;
         private System.Windows.Forms.TextBox txtTongTien;
+        private System.Windows.Forms.Button btnThemMonGiaoDien;
     }
 }
 

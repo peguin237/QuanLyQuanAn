@@ -83,6 +83,36 @@ namespace QuanLyQuanAn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _72bf442186582f1ecd49d717116b6818 {
+            get {
+                object obj = ResourceManager.GetObject("72bf442186582f1ecd49d717116b6818", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _72bf442186582f1ecd49d717116b68181 {
+            get {
+                object obj = ResourceManager.GetObject("72bf442186582f1ecd49d717116b68181", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _8a6d65e0bcbad357c622019c254aa76a {
+            get {
+                object obj = ResourceManager.GetObject("8a6d65e0bcbad357c622019c254aa76a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_red_button_icon_227862 {
             get {
                 object obj = ResourceManager.GetObject("add_red_button_icon_227862", resourceCulture);
@@ -96,6 +126,16 @@ namespace QuanLyQuanAn.Properties {
         internal static System.Drawing.Bitmap adunit_stop_delete_delete_exit_7056 {
             get {
                 object obj = ResourceManager.GetObject("adunit_stop_delete_delete_exit_7056", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg {
+            get {
+                object obj = ResourceManager.GetObject("bg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +203,16 @@ namespace QuanLyQuanAn.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_removebg_preview__1_ {
+            get {
+                object obj = ResourceManager.GetObject("image-removebg-preview (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Logout_37127 {
             get {
                 object obj = ResourceManager.GetObject("Logout_37127", resourceCulture);
@@ -186,6 +236,16 @@ namespace QuanLyQuanAn.Properties {
         internal static System.Drawing.Bitmap pay_cash_bill_money_buy_icon_143287 {
             get {
                 object obj = ResourceManager.GetObject("pay_cash_bill_money_buy_icon_143287", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_red_recipe_background_picture_image_346522 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-red-recipe-background-picture-image_346522", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

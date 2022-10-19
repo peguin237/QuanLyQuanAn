@@ -1,4 +1,4 @@
-﻿using QuanLyQuanAn.QuanLyNhanVien;
+﻿using QuanLyQuanAn.DataTier.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,90 +8,133 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QuanLyQuanAn.DataTier.Model;
 using System.Data.SqlClient;
 using QuanLyQuanAn.Login;
+using QuanLyQuanAn.BusinessTier;
 
 namespace QuanLyQuanAn.PresentaitionTier
 {
     public partial class FormQuanLyNhanVien : Form
     {
+        private readonly NhanVienBUS nhanVienBUS;
+        private int maNhanVien = -1;
         public FormQuanLyNhanVien()
         {
             InitializeComponent();
-        }
-        Modify modify;
-        NhanVien nhanVien;       
+            nhanVienBUS = new NhanVienBUS();
+        }     
 
         private void FormQuanLyNhanVien_Load(object sender, EventArgs e)
         {
-            modify = new Modify();
-            try
-            {
-                dgvNhanVien.DataSource = modify.getAllnhanvien();
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            LoadNhanVien();
+        }
+        private void LoadNhanVien()
+        {
+            dgvNhanVien.DataSource = nhanVienBUS.GetNhanViens();
+            dgvNhanVien.Columns[0].HeaderText = "Mã Nhân Viên";
+            dgvNhanVien.Columns[1].HeaderText = "Tên Nhân Viên";
+            dgvNhanVien.Columns[1].Width = 170;
+            dgvNhanVien.Columns[2].HeaderText = "Giới Tính";
+            dgvNhanVien.Columns[3].HeaderText = "SĐT";
+            dgvNhanVien.Columns[4].HeaderText = "Mật Khẩu";
+            dgvNhanVien.Columns[5].HeaderText = "Tài Khoản";
+            dgvNhanVien.Columns[6].HeaderText = "Quyền";
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            string name = this.txtTen.Text;
-            string pass = this.txtMatKhau.Text;
-            string user = this.txtTaiKhoan.Text;
-            string sdt = this.txtSDT.Text;
-            string sex = this.cbxGioiTinh.Text;
-            string account = this.cbxQuyen.Text;
-            nhanVien = new NhanVien(name, pass, user, sex, sdt, account);
-            if (modify.insert(nhanVien))
+            string thongBao = "";
+            if (string.IsNullOrWhiteSpace(txtTen.Text))
             {
-                dgvNhanVien.DataSource = modify.getAllnhanvien();
+                thongBao += "\nPhải nhập họ tên";
             }
-            else
+            if (string.IsNullOrWhiteSpace(txtTaiKhoan.Text))
             {
-                MessageBox.Show("Lỗi: " + "Không thêm vào được", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                thongBao += "\nPhải nhập tài khoản";
+            }
+            if (string.IsNullOrWhiteSpace(txtMatKhau.Text))
+            {
+                thongBao += "\nPhải nhập mật khẩu";
+            }
+            if (string.IsNullOrWhiteSpace(cbxGioiTinh.Text))
+            {
+                thongBao += "\nPhải chọn giới tính";
+            }
+            if (string.IsNullOrWhiteSpace(cbxQuyen.Text))
+            {
+                thongBao += "\nPhải chọn quyền hạn";
+            }
+            if (string.IsNullOrWhiteSpace(txtSDT.Text))
+            {
+                thongBao += "\nPhải nhập SĐT";
+            }
+            if (thongBao != "")
+            {
+                MessageBox.Show(thongBao);
+                return;
+            }
+            NHANVIEN nv = new NHANVIEN();
+            nv.TEN = txtTen.Text;
+            nv.TENDANGNHAP = txtTaiKhoan.Text;
+            nv.GIOITINH = cbxGioiTinh.Text;
+            nv.QUYEN = cbxQuyen.Text;
+            nv.SDT = txtSDT.Text;
+            nv.MATKHAU = txtMatKhau.Text;
+            try
+            {
+                nhanVienBUS.ThemNhanVien(nv);
+                LoadNhanVien();
+                txtTen.Text = txtTaiKhoan.Text = txtMatKhau.Text = cbxGioiTinh.Text = cbxQuyen.Text = txtSDT.Text = txtMatKhau.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string id = dgvNhanVien.SelectedRows[0].Cells[0].Value.ToString();
-            string name = this.txtTen.Text;
-            string pass = this.txtMatKhau.Text;
-            string user = this.txtTaiKhoan.Text;
-            string sdt = this.txtSDT.Text;
-            string sex = this.cbxGioiTinh.Text;
-            string account = this.cbxQuyen.Text;
-            nhanVien = new NhanVien(name, pass, user, sex, sdt, account);
-            if (modify.update(nhanVien, id))
+            NHANVIEN nv = new NHANVIEN();            
+            nv.TEN = txtTen.Text;
+            nv.TENDANGNHAP = txtTaiKhoan.Text;
+            nv.GIOITINH = cbxGioiTinh.Text;
+            nv.QUYEN = cbxQuyen.Text;
+            nv.SDT = txtSDT.Text;
+            nv.MATKHAU = txtMatKhau.Text;
+            nv.MANV = maNhanVien;
+            try
             {
-                dgvNhanVien.DataSource = modify.getAllnhanvien();
+                nhanVienBUS.CapNhatNhanVien(nv);
+                LoadNhanVien();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + "Không sửa được", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            string id = dgvNhanVien.SelectedRows[0].Cells[0].Value.ToString();
-            if(modify.delete(id))
+            NHANVIEN nv = new NHANVIEN();
+            nv.MANV = maNhanVien;
+            try
             {
-                dgvNhanVien.DataSource = modify.getAllnhanvien();
+                nhanVienBUS.XoaNhanVien(maNhanVien);
+                LoadNhanVien();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + "Không xóa được", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int dongChon = e.RowIndex;
+            maNhanVien = Convert.ToInt32(dgvNhanVien.Rows[dongChon].Cells[0].Value.ToString());
             txtTen.Text = dgvNhanVien.Rows[dongChon].Cells[1].Value.ToString();
-            txtTaiKhoan.Text = dgvNhanVien.Rows[dongChon].Cells[4].Value.ToString();
-            txtMatKhau.Text = dgvNhanVien.Rows[dongChon].Cells[5].Value.ToString();
+            txtTaiKhoan.Text = dgvNhanVien.Rows[dongChon].Cells[5].Value.ToString();
+            txtMatKhau.Text = dgvNhanVien.Rows[dongChon].Cells[4].Value.ToString();
             txtSDT.Text = dgvNhanVien.Rows[dongChon].Cells[3].Value.ToString();
             cbxGioiTinh.Text = dgvNhanVien.Rows[dongChon].Cells[2].Value.ToString();
             cbxQuyen.Text = dgvNhanVien.Rows[dongChon].Cells[6].Value.ToString();
@@ -99,34 +142,21 @@ namespace QuanLyQuanAn.PresentaitionTier
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            txtTen.Text = txtTaiKhoan.Text = txtMatKhau.Text = "";
-            cbxQuyen.Text = cbxGioiTinh.Text = "";
-            txtSDT.Text = "";
-            dgvNhanVien.DataSource = modify.getAllnhanvien();
-            txtTen.Enabled = txtTaiKhoan.Enabled = txtMatKhau.Enabled = cbxGioiTinh.Enabled = cbxQuyen.Enabled = txtSDT.Enabled = true;
+            maNhanVien = -1;
+            txtTaiKhoan.Text = txtTen.Text = txtMatKhau.Text = txtSDT.Text = cbxQuyen.Text = cbxGioiTinh.Text = "";
+            LoadNhanVien();
         }
-
-
         private void btnTim_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlConnection = Connection.GetConnection();
-            String sqlTimKiem = "Select * From NHANVIEN Where TEN LIKE N'%' + @TEN + '%'";
-            SqlCommand command = new SqlCommand(sqlTimKiem, sqlConnection);
-            sqlConnection.Open();
-            command.Parameters.AddWithValue("TEN", txtTim.Text);
-            command.ExecuteNonQuery();
-            SqlDataReader dr = command.ExecuteReader();
-            DataTable table = new DataTable(sqlTimKiem);
-            table.Load(dr);
-            dgvNhanVien.DataSource = table;
-            sqlConnection.Close();
-            if (table.Rows.Count > 0)
+            string tenNhanVien = txtTim.Text;
+            try
             {
+                dgvNhanVien.DataSource = nhanVienBUS.GetNhanVien(tenNhanVien);
                 dgvNhanVien.Rows[0].Selected = true;
             }
-            else
+            catch
             {
-                MessageBox.Show("Không có nhân viên tên này");
+                MessageBox.Show("Không tồn tại nhân viên này", "Thông báo", MessageBoxButtons.OK);
             }
         }
     }   

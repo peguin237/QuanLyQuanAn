@@ -121,11 +121,14 @@
   <data name="fooddome_116536 (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fooddome_116536 (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Exit_41038" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Exit_41038.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="communication_call_customer_help_support_earphone_headset_headphone_icon_210739" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\communication_call_customer_help_support_earphone_headset_headphone_icon_210739.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="z3808639741547_1ef8bc242afec66edd882b64781b8cfa-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\z3808639741547_1ef8bc242afec66edd882b64781b8cfa-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="8a6d65e0bcbad357c622019c254aa76a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\8a6d65e0bcbad357c622019c254aa76a.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="delete_delete_exit_1577" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\delete_delete_exit_1577.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -133,14 +136,20 @@
   <data name="icon doanh thu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon doanh thu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="pngtree-red-recipe-background-picture-image_346522" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pngtree-red-recipe-background-picture-image_346522.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="od__1_-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\od__1_-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="z3808677077343_3cf2fa63cc3cfe40e82b90099ef75a25-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\z3808677077343_3cf2fa63cc3cfe40e82b90099ef75a25-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logout_37127" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logout_37127.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pay_cash_bill_money_buy_icon_143287" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pay_cash_bill_money_buy_icon_143287.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="tabletchart_116582" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\tabletchart_116582.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,11 +160,20 @@
   <data name="4014665-fix-fixing-phone-repair-tool-wrench_112887" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\4014665-fix-fixing-phone-repair-tool-wrench_112887.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Logout_37127" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logout_37127.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="72bf442186582f1ecd49d717116b68181" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\72bf442186582f1ecd49d717116b68181.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1486486291-arrows-swap-direction-orientation-switch_81211" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1486486291-arrows-swap-direction-orientation-switch_81211.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="z3808689450445_58141f50f46778936f74e77fdbc85249-removebg-preview (1) (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\z3808689450445_58141f50f46778936f74e77fdbc85249-removebg-preview (1) (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="72bf442186582f1ecd49d717116b6818" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\72bf442186582f1ecd49d717116b6818.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add_red_button_icon_227862" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add_red_button_icon_227862.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -163,10 +181,10 @@
   <data name="icontexto-search-11_icon-icons.com_76907" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icontexto-search-11_icon-icons.com_76907.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="pay_cash_bill_money_buy_icon_143287" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pay_cash_bill_money_buy_icon_143287.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="z3808639741547_1ef8bc242afec66edd882b64781b8cfa-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z3808639741547_1ef8bc242afec66edd882b64781b8cfa-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Exit_41038" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Exit_41038.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="image-removebg-preview (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\image-removebg-preview (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

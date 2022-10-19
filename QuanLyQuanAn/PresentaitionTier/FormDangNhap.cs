@@ -10,16 +10,19 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using QuanLyQuanAn.Login;
+using QuanLyQuanAn.BusinessTier;
+using QuanLyQuanAn.DataTier.ViewModel;
 using QuanLyQuanAn.PresentaitionTier;
-
 
 namespace QuanLyQuanAn
 {
     public partial class FormDangNhap : Form
     {
+        private NhanVienBUS nhanVienBUS;
         public FormDangNhap()
         {
             InitializeComponent();
+            nhanVienBUS = new NhanVienBUS();
         }
         private void Reset()
         {
@@ -35,34 +38,15 @@ namespace QuanLyQuanAn
 
         private void btndangnhap_Click(object sender, EventArgs e)
         {
-            SqlConnection sqlConnection = Connection.GetConnection();
-            try
-            {               
-                sqlConnection.Open();
-                SqlDataAdapter da = new SqlDataAdapter("select * from NHANVIEN where TENDANGNHAP= '"+txtTaiKhoan.Text+"' and MATKHAU= '"+txtMatKhau.Text+"'", sqlConnection);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt.Rows.Count > 0)
-                {
-                    MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
-                    FormTong f = new FormTong(dt.Rows[0][0].ToString(), dt.Rows[0][1].ToString(), dt.Rows[0][2].ToString(), dt.Rows[0][3].ToString(), dt.Rows[0][4].ToString(), dt.Rows[0][5].ToString(), dt.Rows[0][6].ToString());
-                    f.Show();
-                    this.Hide();
-                    this.Reset();
-                    f.DangXuat += F_DangXuat;
-                }
-                else
-                {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK);
-                }
-            }
-            catch(Exception ex)
+            NhanVienViewModel nv;
+            if (nhanVienBUS.KiemTraNhanVien(txtTaiKhoan.Text, txtMatKhau.Text, out nv))
             {
-                MessageBox.Show("Lỗi kết nối");
-            }
-            finally
-            {
-                sqlConnection.Close();
+                MessageBox.Show("Đăng nhập thành công", "Thông báo", MessageBoxButtons.OK);
+                FormTong f = new FormTong(nv);
+                f.Show();
+                this.Hide();
+                this.Reset();
+                f.DangXuat += F_DangXuat;
             }
         }
         private void F_DangXuat(object sender, EventArgs e)

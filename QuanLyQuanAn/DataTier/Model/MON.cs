@@ -20,10 +20,11 @@ namespace QuanLyQuanAn.DataTier.Model
 
         [StringLength(50)]
         public string TEN { get; set; }
+        public string HINH { get; set; }
 
-        public int? MADANHMUC { get; set; }
+        public int MADANHMUC { get; set; }
 
-        public double? GIATIEN { get; set; }
+        public double GIATIEN { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CHITIETHOADON> CHITIETHOADONs { get; set; }

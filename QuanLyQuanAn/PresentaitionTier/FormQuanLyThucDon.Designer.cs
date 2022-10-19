@@ -50,6 +50,14 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
+            this.txtFilePath = new System.Windows.Forms.TextBox();
+            this.btnBrowser = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonAn)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -140,6 +148,12 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvMonAn.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvMonAn.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMonAn.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.LightCoral;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -301,12 +315,78 @@
             this.btnTim.UseVisualStyleBackColor = false;
             this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
+            // txtFilePath
+            // 
+            this.txtFilePath.Location = new System.Drawing.Point(842, 33);
+            this.txtFilePath.Name = "txtFilePath";
+            this.txtFilePath.Size = new System.Drawing.Size(100, 22);
+            this.txtFilePath.TabIndex = 27;
+            // 
+            // btnBrowser
+            // 
+            this.btnBrowser.Location = new System.Drawing.Point(969, 14);
+            this.btnBrowser.Name = "btnBrowser";
+            this.btnBrowser.Size = new System.Drawing.Size(75, 64);
+            this.btnBrowser.TabIndex = 28;
+            this.btnBrowser.Text = "Browser..";
+            this.btnBrowser.UseVisualStyleBackColor = true;
+            this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(791, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 20);
+            this.label1.TabIndex = 29;
+            this.label1.Text = "Hình";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Mã Món";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Tên Món";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Giá Tiền";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Mã Danh Mục";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Hình";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
             // FormQuanLyThucDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Maroon;
             this.ClientSize = new System.Drawing.Size(1136, 605);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnBrowser);
+            this.Controls.Add(this.txtFilePath);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.cbxMaDanhMuc);
             this.Controls.Add(this.groupBox1);
@@ -352,5 +432,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtTim;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox txtFilePath;
+        private System.Windows.Forms.Button btnBrowser;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }
